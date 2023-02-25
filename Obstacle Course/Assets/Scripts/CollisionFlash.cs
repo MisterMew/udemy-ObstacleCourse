@@ -1,22 +1,22 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public static class CollisionFlash
+public  class CollisionFlash : MonoBehaviour
 {
     /* Variables */
-    private static MonoBehaviour monoBehaviour = new MonoBehaviour();
-    private static MeshRenderer meshRenderer = null;
-    private static Color defaultColour = default;
+    private  MonoBehaviour monoBehaviour = default;
+
+    private  MeshRenderer meshRenderer = null;
+    private  Color defaultColour = default;
 
     [Header("Flash Variables")]
-    private static float flashDuration = 1F; //0.024
-    private static float flashIntensity = 1F; //8
-    private static Color flashColour = default;
-    private static float flashTimer = 0F;
-    private static float lerp, intensity = 0F;
+    private  float flashDuration = 1F; //0.024
+    private  float flashIntensity = 1F; //8
+    private  Color flashColour = default;
+    private  float flashTimer = 0F;
+    private  float lerp, intensity = 0F;
 
-
-    public static void InitFlash(GameObject target, Color color)
+    public  void InitFlash(GameObject target, Color color)
     {
         if (target == null || color == null) return;
 
@@ -26,10 +26,17 @@ public static class CollisionFlash
 
         flashTimer = flashDuration;
 
-        MonoScript.StartExternalCoroutine(monoBehaviour, (IEnumerator)DoFlash());
+        /* How to use Coroutine when script doesn't inherit from MonoBehvaiour */
+        ///
+        /// if (monoBehaviour == null)
+        ///     monoBehaviour = new GameObject().AddComponent<MonoScript>();
+        ///
+        /// MonoScript.StartExternalCoroutine(monoBehaviour, (IEnumerator)DoFlash());
+        ///
+        StartCoroutine(DoFlash());
     }
 
-    private static IEnumerator DoFlash()
+    private  IEnumerator DoFlash()
     {
         flashTimer -= Time.time; //Decrease flash timer
 

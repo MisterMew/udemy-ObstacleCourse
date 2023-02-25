@@ -2,8 +2,8 @@
 
 public class CollisionDetection : MonoBehaviour
 {
+    /* Variables */
     private Scoring scoring;
-    private Color ORANGE = new Color32(255, 125, 0, 1);
 
     private void Start() => scoring = FindObjectOfType<Scoring>();
 
@@ -14,16 +14,11 @@ public class CollisionDetection : MonoBehaviour
             if (scoring != null) 
                 scoring.AddCollisionCount();
 
-            CollisionFlash.InitFlash(collision.gameObject, ORANGE);
-            //collision.gameObject.GetComponent<MeshRenderer>().material.color = new Color32(255,125,0,1);
-            //CollisionFlash.InitFlash(collision.gameObject, Color.yellow);
+            if (!collision.gameObject.GetComponentInChildren<CollisionFlash>())
+                collision.gameObject.AddComponent<CollisionFlash>();
+
+            collision.gameObject.GetComponentInChildren<CollisionFlash>().
+                InitFlash(collision.gameObject, new Color32(255, 125, 0, 1));
         }
     }
-
-    //private void OnCollisionExit(Collision collision)
-    //{
-    //    if (collision.gameObject.tag == "Obstacle")
-    //        collision.gameObject.GetComponent<MeshRenderer>().material.color = Color.white;
-    //}
-
 }
