@@ -9,9 +9,9 @@ public static class CollisionFlash
     private static Color defaultColour = default;
 
     [Header("Flash Variables")]
-    [SerializeField] private static float flashDuration = 1F; //0.024
-    [SerializeField] private static float flashIntensity = 1F; //8
-    [SerializeField] private static Color flashColour = default;
+    private static float flashDuration = 1F; //0.024
+    private static float flashIntensity = 1F; //8
+    private static Color flashColour = default;
     private static float flashTimer = 0F;
     private static float lerp, intensity = 0F;
 
