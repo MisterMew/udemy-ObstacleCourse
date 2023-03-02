@@ -33,7 +33,7 @@ public class MovingObject : MonoBehaviour
     [Tooltip("if TRUE: Object will only move while the player is touching it")]
     [SerializeField] private bool playerActivated = false;
     [SerializeField] private bool lockUntilActivated = false;
-    [Tooltip("The waypoint that a object will ALWAYS return to (element number from 'Object Waypoints' list)")]
+    [Tooltip("-1 to start at scene position. The waypoint that a object will ALWAYS return to (element number from 'Object Waypoints' list)")]
     [SerializeField] private int homeWaypoint = 0;
 
     private bool moveObject = true;
@@ -46,7 +46,7 @@ public class MovingObject : MonoBehaviour
     private void Start()
     {
         /* Set Starting Position */
-        if (!lockUntilActivated)
+        if (!lockUntilActivated || homeWaypoint > -1)
             targetObject.transform.position = objectWaypoints[homeWaypoint].position;
 
         /* Check if player Activated */

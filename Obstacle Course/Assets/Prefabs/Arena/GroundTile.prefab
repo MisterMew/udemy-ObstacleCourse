@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 1743619907115533697}
   - component: {fileID: 1601326022320945851}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: obj_Foundation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 4580848223713885219}
   - component: {fileID: 4329590646791051155}
   m_Layer: 0
-  m_Name: Ground Plane
+  m_Name: obj_TopPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -154,7 +154,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2703775598680847983}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5001, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5002, z: 0}
   m_LocalScale: {x: 0.5, y: 1, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1904044601510570208}
